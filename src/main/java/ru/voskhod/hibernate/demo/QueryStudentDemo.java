@@ -40,7 +40,24 @@ public class QueryStudentDemo {
                     .getResultList();
 
             // display search result
-            System.out.println("\n\nStudents with last name 'Doe':");
+            System.out.println("\n\nStudents with last name of 'Doe':");
+            displayTheStudents(students);
+
+            // query students: lastName = 'Doe' OR firstName = 'Daffy'
+            students = session
+                    .createQuery("from Student s where s.lastName='Doe' or s.firstName='Daffy'", Student.class)
+                    .getResultList();
+
+            // display search result
+            System.out.println("\n\nStudents with last name of 'Doe' OR first name of 'Daffy':");
+            displayTheStudents(students);
+
+            // search for students whose email ends with "duck.ru"
+            students = session
+                    .createQuery("from Student s where s.email like '%duck.ru'", Student.class)
+                    .getResultList();
+
+            System.out.println("\n\nStudents whose email ends with 'duck.ru': ");
             displayTheStudents(students);
 
             // commit transaction
