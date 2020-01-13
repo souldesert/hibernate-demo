@@ -10,7 +10,7 @@ public class TestJDBC  {
     @Test
     public void testJDBCConnection() {
 
-        String JDBCUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=Europe/Moscow";
+        String JDBCUrl = "jdbc:mysql://10.216.0.234:3306/hb_student_tracker?useSSL=false&serverTimezone=Europe/Moscow";
         String user = "hbstudent";
         String password = "hbstudent";
 
