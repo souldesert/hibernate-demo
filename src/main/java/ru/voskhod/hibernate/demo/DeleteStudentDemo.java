@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import ru.voskhod.hibernate.demo.entity.Student;
 
-public class UpdateStudentDemo {
+public class DeleteStudentDemo {
     public static void main(String[] args) {
 
         // create session factory
@@ -27,23 +27,12 @@ public class UpdateStudentDemo {
 
             Student student = session.get(Student.class, studentId);
 
-            System.out.println("Get complete: " + student);
+            // delete the student
+//            System.out.println("Deleting student: " + student);
+//            session.delete(student);
 
-            System.out.println("Updating...");
-
-            student.setFirstName("Scooby");
-
-            session.getTransaction().commit();
-
-            // NEW CODE
-
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-
-            // update email for all students
-            System.out.println("Update email for all students");
-
-            session.createQuery("update Student set email='foo@bar.com'")
+            // delete student with id of 2
+            session.createQuery("delete from Student where id=2")
                     .executeUpdate();
 
             session.getTransaction().commit();
