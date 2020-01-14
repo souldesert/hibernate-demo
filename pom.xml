@@ -16,13 +16,6 @@
             <version>5.4.10.Final</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate.common</groupId>-->
-<!--            <artifactId>hibernate-commons-annotations</artifactId>-->
-<!--            <version>5.1.0.Final</version>-->
-<!--        </dependency>-->
-
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
